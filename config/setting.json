@@ -1,0 +1,26 @@
+{
+  "config": {
+    "branch": "master",
+    "domain": "https://seaony.github.io",
+    "email": "seaony@outlook.com",
+    "platform": "github",
+    "repository": "seaony.github.io",
+    "token": "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",
+    "username": "seaony"
+  },
+  "comment": {
+    "commentPlatform": "gitalk",
+    "disqusSetting": {
+      "api": "",
+      "apikey": "",
+      "shortname": ""
+    },
+    "gitalkSetting": {
+      "clientId": "",
+      "clientSecret": "",
+      "owner": "",
+      "repository": ""
+    },
+    "showComment": false
+  }
+}
