@@ -19,7 +19,7 @@
   "customConfig": {
     "contentBgColor": "#ffffff",
     "contentMaxWidth": "800px",
-    "customCss": "@font-face{font-family:'Cascadia Code';font-style:normal;font-display:swap;font-weight:400;src:url(./files/cascadia-code-latin-ext-400-normal.woff2) format('woff2'),url(./files/cascadia-code-latin-ext-400-normal.woff) format('woff')}\n\ncode, pre {\n    font-family: Cascadia Code !important;\n}\n\n.post-feature-image {\n    border-radius: 20px !important;\n}",
+    "customCss": "@font-face{font-family:'Cascadia Code';font-style:normal;font-display:swap;font-weight:400;src:url(./files/cascadia-code-latin-ext-400-normal.woff2) format('woff2'),url(./files/cascadia-code-latin-ext-400-normal.woff) format('woff')}\n\ncode, pre {\n    font-family: Cascadia Code !important;\n}\n\n.post-feature-image {\n    border-radius: 20px !important;\n}\n\n.post-detail .post .post-content h2 {\n    margin-bottom: 3rem;\n}",
     "facebook": "",
     "ga": "",
     "github": "",
