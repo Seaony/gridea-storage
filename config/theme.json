@@ -5,7 +5,7 @@
     "dateFormat": "YYYY-MM-DD",
     "feedCount": 10,
     "feedFullText": true,
-    "footerInfo": "Powered by  <a href=\"https://github.com/getgridea/gridea\" target=\"_blank\">Gridea</a>",
+    "footerInfo": "Powered by  <a href=\"https://github.com/getgridea/gridea\" target=\"_blank\" style=\"margin-left: 6px;\">Gridea</a>",
     "postPageSize": 10,
     "postPath": "post",
     "postUrlFormat": "SLUG",
@@ -22,7 +22,7 @@
     "customCss": "",
     "facebook": "",
     "ga": "",
-    "github": "",
+    "github": "https://github.com/Seaony",
     "linkColor": "rgba(0,0,0,.98)",
     "linkHoverColor": "#006CFF",
     "metaDescription": "",
@@ -32,8 +32,8 @@
     "textColor": "rgba(0, 0, 0, 0.86)",
     "textSize": "15px",
     "titleAlign": "center",
-    "twitter": "",
-    "weibo": "",
-    "zhihu": ""
+    "twitter": "https://twitter.com/wseaony",
+    "weibo": "https://weibo.com/u/6339161443",
+    "zhihu": "https://www.zhihu.com/people/seaony"
   }
 }

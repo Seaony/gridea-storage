@@ -1,10 +1,10 @@
 ---
 title: '🪴 Xcode 中创建纯代码布局项目'
 date: 2023-03-23 00:03:28
-tags: [Gridea,Swift]
+tags: [Swift]
 published: true
 hideInList: false
-feature: /post-images/hello-gridea.jpg
+feature: /post-images/hello-gridea.png
 isTop: false
 ---
 

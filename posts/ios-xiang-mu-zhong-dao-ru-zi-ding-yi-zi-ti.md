@@ -4,7 +4,7 @@ date: 2023-03-28 05:33:25
 tags: [Swift,iOS]
 published: true
 hideInList: false
-feature: /post-images/ios-xiang-mu-zhong-dao-ru-zi-ding-yi-zi-ti.jpg
+feature: /post-images/ios-xiang-mu-zhong-dao-ru-zi-ding-yi-zi-ti.png
 isTop: false
 ---
 
