@@ -4,12 +4,13 @@ date: 2023-03-23 00:03:28
 tags: [Gridea,Swift]
 published: true
 hideInList: false
-feature: /post-images/hello-gridea.png
+feature: /post-images/hello-gridea.jpg
 isTop: false
 ---
 
-## 1：移除 Main.storyboard
+# 🧐 1. 移除 Storyboard
 
+没什么好说的，既然是纯代码布局，那么 Storyboard 文件就不需要了。
 
 ```shell
 rm ./Main.storyboard
@@ -17,9 +18,9 @@ rm ./Main.storyboard
 
 ---
 
-## 2：修改 Main Interface
+# 👨‍💻 2. 修改 Main Interface
 
-> 因为 Xcode 版本更新，不同的版本会有不同的处理方案。
+因为 Xcode 版本更新，不同的版本会有不同的处理方案。
 
 -  Xcode Version < **14.0**
 
@@ -32,7 +33,7 @@ rm ./Main.storyboard
 
 ---
 
-## 3：设置默认 ViewController
+# 🪴 3. 设置默认 View
 
 在你的 `AppDelegate.swift` - `application` 中添加如下代码。
 
