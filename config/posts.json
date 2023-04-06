@@ -36,14 +36,14 @@
       "fileName": "hello-gridea"
     },
     {
-      "content": "> 欢迎来到我的小站呀，很高兴遇见你！🤝\n\n## 🏠 关于本站\n\n## 👨‍💻 博主是谁\n\n## ⛹ 兴趣爱好\n\n## 📬 联系我呀\n",
+      "content": "\n<!-- more -->\n\n> We used to look up at the sky and wonder at our place in the stars, now we just look down and worry about our place in the dirt. - 《Interstellar》\n\n<!-- more -->\n\n\n\n## 🏠 Who am I?\n\n\n## 👨‍💻 博主是谁\n\n\n## ⛹ 兴趣爱好\n\n\n## 🫠 Contact\n\nWeChat (Base64)：`Y2FsaWJ1b3Jz`\n",
       "data": {
-        "title": "关于",
+        "title": "💭 Think/Life/Code and Death",
         "date": "2019-01-25 19:09:48",
         "tags": [],
         "published": true,
         "hideInList": true,
-        "feature": null,
+        "feature": "/post-images/about.jpeg",
         "isTop": false
       },
       "isEmpty": false,
