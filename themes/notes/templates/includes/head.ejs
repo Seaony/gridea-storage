@@ -17,3 +17,54 @@
   gtag('config', '<%= site.customConfig.ga %>');
 </script>
 <% } %>
+
+<style>
+    @font-face {
+        font-family: 'Cascadia Code';
+        font-style: normal;
+        font-display: swap;
+        font-weight: 700;
+        src: url('https://github.com/Seaony/seaony.github.io/tree/master/fonts/CascadiaCode/CascadiaCode-Bold.otf') format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Cascadia Code';
+        font-style: normal;
+        font-display: swap;
+        font-weight: 500;
+        src: url('https://github.com/Seaony/seaony.github.io/tree/master/fonts/CascadiaCode/CascadiaCode-SemiBold.otf') format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Cascadia Code';
+        font-style: normal;
+        font-display: swap;
+        font-weight: 400;
+        src: url('https://github.com/Seaony/seaony.github.io/tree/master/fonts/CascadiaCode/CascadiaCode-Regular.otf') format('truetype');
+    }
+
+    code, pre {
+        font-family: Cascadia Code !important;
+    }
+
+    .post-feature-image {
+        border-radius: 20px !important;
+    }
+
+    .post-detail .post .post-content h2 {
+        margin-bottom: 3rem;
+    }
+
+    .post-detail .post .post-content p code, .post-detail .post .post-content li code {
+        color: #42b883;
+    }
+
+    code, kbd, samp, pre {
+        font-size: .9em;
+    }
+
+    .post-detail .post .post-content a {
+        color: #42b883;
+        font-family: Cascadia Code;
+    }
+</style>

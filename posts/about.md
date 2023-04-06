@@ -1,10 +1,10 @@
 ---
-title: '💭 Think/Life/Code and Death'
+title: '💭 Code in Life, Think in Death。'
 date: 2019-01-25 19:09:48
 tags: []
 published: true
 hideInList: true
-feature: /post-images/about.jpeg
+feature: /post-images/about.jpg
 isTop: false
 ---
 
@@ -19,7 +19,11 @@ isTop: false
 ## 🏠 Who am I?
 
 
-## 👨‍💻 博主是谁
+
+## ⚒️ Digital Nomad
+
+#### 👨‍💻 Terminal
+- [Hyper](https://hyper.is/)
 
 
 ## ⛹ 兴趣爱好
