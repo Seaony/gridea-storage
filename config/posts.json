@@ -1,6 +1,28 @@
 {
   "posts": [
     {
+      "content": "\n> 本文章所实现内容仅做学习分享所用，本人不承担任何责任，请勿将相关信息用于非法用途。\n\n# 🫠 准备工作\n\n首先，安装 [GuzzleHttp](https://github.com/guzzle/guzzle) 网络请求 Package。\n\n```shell\ncomposer require guzzlehttp/guzzle\n```\n\n---\n\n# 💭 绕过 Cloudflare\n\nValorant Api 受到 Cloudflare 防护，以及 Riot 也加了一层验证。\n\n绕过 Cloudflare 的核心原理是使用 `Ciphers` 伪造 SSL，具体请求方式如下：\n\n```php\n /**\n* 用于绕过 Riot 防护的请求头\n*\n* @var string[] 请求头\n*/\n$headers = [\n    'Content-Type'          => 'application/json',\n    'User-Agent'            => 'RiotClient/63.0.5.4887690.4789131 rso-auth (Windows; 10;;Professional, x64)',\n    'X-Riot-ClientPlatform' => 'ew0KCSJwbGF0Zm9ybVR5cGUiOiAiUEMiLA0KCSJwbGF0Zm9ybU9TIjogIldpbmRvd3MiLA0KCSJwbGF0Zm9ybU9TVmVyc2lvbiI6ICIxMC4wLjE5MDQyLjEuMjU2LjY0Yml0IiwNCgkicGxhdGZvcm1DaGlwc2V0IjogIlVua25vd24iDQp9',\n];\n\n/**\n* 请求中绕过 Cloudflare 所需要的 SSL 证书加密方式\n*\n* @var string[] 用于请求的参数\n*/\n$ciphers13 = [\n    'TLS_CHACHA20_POLY1305_SHA256',\n    'TLS_AES_128_GCM_SHA256',\n    'TLS_AES_256_GCM_SHA384',\n];\n\n/**\n* 请求中绕过 Cloudflare 所需要的 SSL 证书加密方式\n*\n* @var string[] 用于请求的参数\n*/\n$ciphers = [\n    'ECDHE-ECDSA-CHACHA20-POLY1305',\n    'ECDHE-RSA-CHACHA20-POLY1305',\n    'ECDHE-ECDSA-AES128-GCM-SHA256',\n    'ECDHE-RSA-AES128-GCM-SHA256',\n    'ECDHE-ECDSA-AES256-GCM-SHA384',\n    'ECDHE-RSA-AES256-GCM-SHA384',\n    'ECDHE-ECDSA-AES128-SHA',\n    'ECDHE-RSA-AES128-SHA',\n    'ECDHE-ECDSA-AES256-SHA',\n    'ECDHE-RSA-AES256-SHA',\n    'AES128-GCM-SHA256',\n    'AES256-GCM-SHA384',\n    'AES128-SHA',\n    'AES256-SHA',\n    'DES-CBC3-SHA',  # most likely not available\n];\n\n// 实例化 HttpClient\n $client = new \\GuzzleHttp\\Client([\n    'cookies' => true, // 开启 Cookie，保存 Riot 返回的 Token\n    'curl'    => [\n        CURLOPT_SSLVERSION      => CURL_SSLVERSION_TLSv1_3,\n        CURLOPT_SSL_CIPHER_LIST => implode(':', $ciphers),\n        CURLOPT_TLS13_CIPHERS   => implode(':', $ciphers13),\n    ],\n]);\n\n// 发送请求\n$response = $client->request('POST', 'https://auth.riotgames.com/api/v1/authorization', [\n    'json' => [\n        'client_id'             => 'riot-client',\n        'code_challenge'        => '',\n        'code_challenge_method' => '',\n        'acr_values'            => '',\n        'claims'                => '',\n        'nonce'                 => '69420',\n        'redirect_uri'          => 'http://localhost/redirect',\n        'response_type'         => 'token id_token',\n        'scope'                 => 'openid link ban lol_region',\n    ],\n]);\n\n// do something\n```\n\n---\n\n# 👨‍💻 Reference Links\n\n- [techchrism/valorant-api-docs](https://github.com/techchrism/valorant-api-docs)\n",
+      "data": {
+        "title": "🪴 绕过 Cloudflare 访问 Valorant Api",
+        "date": "2023-04-07 02:46:08",
+        "tags": [
+          "SSL",
+          "Laravel",
+          "GuzzleHttp",
+          "Proxy",
+          "Curl"
+        ],
+        "published": true,
+        "hideInList": false,
+        "feature": "/post-images/laravel-rao-guo-cloudflare-fang-huo-qiang-fang-wen-valorant-nei-bu-api.png",
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "laravel-rao-guo-cloudflare-fang-huo-qiang-fang-wen-valorant-nei-bu-api"
+    },
+    {
       "content": "\n# 🪴 全局加载字体\n\n## 1. 导入字体文件\n\n准备好要使用的字体文件，并且将它导入至你的 XCode Project 中。\n\n> Tips：一定要勾选 `Copy items if needed` ，不勾选的话只会进行位置引用。\n\n![](https://seaony.github.io/post-images/1679953001044.png)\n\n---\n\n## 2. 修改 Info.plist\n\n打开你的 `Info.plist` 文件，新增一项：`Fonts provided by application`。\n\n对应的值即为你的字体文件的名称 (不需要带 Group 前缀，需要带文件后缀)。\n\n![](https://seaony.github.io/post-images/1679953202754.png)\n\n---\n\n## 3. 添加资源文件\n\n确保你的字体文件已添加至 `TARGETS` - `Build Phases` - `Copy Bundle Resources` 中。\n\n> 一般导入字体文件后会自动添加，但也会有意外 :-)\n\n![](https://seaony.github.io/post-images/1679953445072.png)\n\n---\n\n## 4. 确认导入成功\n\n运行这段代码即可打印出所有可用字体，检查是否导入成功。\n\n```swift\nfor fontFamily in UIFont.familyNames {\n    print(fontFamily)\n\n    for font in UIFont.fontNames(forFamilyName: fontFamily) {\n        print(fontFamily + \": \" + font)\n    }\n}\n```\n\n---\n\n# 🧐 覆盖默认字体\n\n如果你需要全局都显示某个字体，那么就需要这样设置。\n\n如果不这样做，那么你需要在每一个显示文本的地方都指定 `FontName`。\n\n> Tips：使用覆盖 UIFont 的方式设置全局字体会导致键盘等系统 UI 字体也被替换。\n\n## 1. 创建 UIFont 拓展\n\n在 `Extension` Group 下创建 `UIFontExtension` 文件拓展 UIFont 类。\n\n> 当然，你也可以放在别的位置，使用其他名称 🫠。\n\n```swift\nimport UIKit\n\n// MARK: - AppFontName\nstruct AppFontName {\n    static let italic = \"Montserrat-Medium\"\n    static let regular = \"Montserrat-Medium\"\n    static let semibold = \"Montserrat-SemiBold\"\n    static let bold = \"Montserrat-Bold\"\n    static let heavy = \"Montserrat-ExtraBold\"\n    static let black = \"Montserrat-Black\"\n}\n\n// MARK: - UIFontDescriptor.AttributeName\nextension UIFontDescriptor.AttributeName {\n\n    /// NSCTFontUIUsageAttribute\n    static let nsctFontUIUsage = UIFontDescriptor.AttributeName(rawValue: \"NSCTFontUIUsageAttribute\")\n\n}\n\n/// 字体扩展\nextension UIFont {\n\n    /// 是否已经替换过\n    static var isOverrided: Bool = false\n\n    // 重写系统字体\n    @objc class func mySystemFont(ofSize size: CGFloat, weight: UIFont.Weight) -> UIFont {\n        switch weight {\n        case .ultraLight, .thin, .light, .regular, .medium:\n            return UIFont(name: AppFontName.regular, size: size)!\n        case .semibold:\n            return UIFont(name: AppFontName.semibold, size: size)!\n        case .bold:\n            return UIFont(name: AppFontName.bold, size: size)!\n        case .heavy:\n            return UIFont(name: AppFontName.heavy, size: size)!\n        case .black:\n            return UIFont(name: AppFontName.black, size: size)!\n        default:\n            return UIFont(name: AppFontName.regular, size: size)!\n        }\n    }\n\n    // 重写粗体字体\n    @objc class func myBoldSystemFont(ofSize size: CGFloat) -> UIFont {\n        return UIFont(name: AppFontName.bold, size: size)!\n    }\n\n    // 重写斜体字体\n    @objc class func myItalicSystemFont(ofSize size: CGFloat) -> UIFont {\n        return UIFont(name: AppFontName.italic, size: size)!\n    }\n\n    // 重写字体的编码方法\n    @objc convenience init(myCoder aDecoder: NSCoder) {\n        guard\n                let fontDescriptor = aDecoder.decodeObject(forKey: \"UIFontDescriptor\") as? UIFontDescriptor,\n                let fontAttribute = fontDescriptor.fontAttributes[.nsctFontUIUsage] as? String\n        else {\n            self.init(myCoder: aDecoder)\n            return\n        }\n        var fontName = \"\"\n        switch fontAttribute {\n        case \"CTFontRegularUsage\":\n            fontName = AppFontName.regular\n        case \"CTFontEmphasizedUsage\", \"CTFontBoldUsage\":\n            fontName = AppFontName.bold\n        case \"CTFontObliqueUsage\":\n            fontName = AppFontName.italic\n        default:\n            fontName = AppFontName.regular\n        }\n        self.init(name: fontName, size: fontDescriptor.pointSize)!\n    }\n\n    /// 替换系统字体\n    class func overrideInitialize() {\n\n        // 避免 method swizzling 运行两次\n        guard self == UIFont.self, !isOverrided else {\n            return\n        }\n\n        // 避免 method swizzling 运行两次并恢复到原始初始化函数\n        isOverrided = true\n\n        // 替换系统字体\n        if let systemFontMethod = class_getClassMethod(self, #selector(systemFont(ofSize:weight:))),\n           let mySystemFontMethod = class_getClassMethod(self, #selector(mySystemFont(ofSize:weight:))) {\n            method_exchangeImplementations(systemFontMethod, mySystemFontMethod)\n        }\n\n        // 替换粗体字体\n        if let boldSystemFontMethod = class_getClassMethod(self, #selector(boldSystemFont(ofSize:))),\n           let myBoldSystemFontMethod = class_getClassMethod(self, #selector(myBoldSystemFont(ofSize:))) {\n            method_exchangeImplementations(boldSystemFontMethod, myBoldSystemFontMethod)\n        }\n\n        // 替换斜体字体\n        if let italicSystemFontMethod = class_getClassMethod(self, #selector(italicSystemFont(ofSize:))),\n           let myItalicSystemFontMethod = class_getClassMethod(self, #selector(myItalicSystemFont(ofSize:))) {\n            method_exchangeImplementations(italicSystemFontMethod, myItalicSystemFontMethod)\n        }\n\n        // Trick to get over the lack of UIFont.init(coder:))\n        if let initCoderMethod = class_getInstanceMethod(self, #selector(UIFontDescriptor.init(coder:))),\n           let myInitCoderMethod = class_getInstanceMethod(self, #selector(UIFont.init(myCoder:))) {\n            method_exchangeImplementations(initCoderMethod, myInitCoderMethod)\n        }\n    }\n}\n```\n\n---\n\n## 2. 覆盖初始化方法\n\n在你的 `AppDelegate` 文件中注册如下方法，覆盖 UIFont 初始化。\n\n```swift\noverride init() {\n    super.init()\n    UIFont.overrideInitialize()\n}\n```\n\n---\n\n# 🫠 Reference Links\n\n- [Set default custom font for entire app — Swift 5](https://medium.com/fabcoding/set-default-custom-font-for-entire-app-swift-5-55709e36e6f3)\n\n- [Setting up custom font style for Text, Labels and Buttons globally in iOS Application — iOS Swift](https://medium.com/@arunvaishy1007/setting-up-custom-font-style-for-text-labels-and-buttons-globally-in-ios-application-ios-swift-17b08317c026)\n\n\n",
       "data": {
         "title": "👨‍💻 iOS 项目中使用自定义字体",
@@ -55,6 +77,31 @@
     }
   ],
   "tags": [
+    {
+      "name": "SSL",
+      "slug": "jThqpHLAD",
+      "used": true
+    },
+    {
+      "name": "Laravel",
+      "slug": "PT-GB7dPys",
+      "used": true
+    },
+    {
+      "name": "GuzzleHttp",
+      "slug": "TFliXGNH_M",
+      "used": true
+    },
+    {
+      "name": "Proxy",
+      "slug": "_jJnooo1rL",
+      "used": true
+    },
+    {
+      "name": "Curl",
+      "slug": "ulqMbRj3y4",
+      "used": true
+    },
     {
       "name": "iOS",
       "slug": "KiEwulagm",
