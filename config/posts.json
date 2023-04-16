@@ -1,6 +1,44 @@
 {
   "posts": [
     {
+      "content": "\n## 😶‍🌫️ 创建文件\n\n在项目根目录下右键选择 `New File`，创建一个名为 `Localizable.strings` 的 Strings File。\n\n![](https://seaony.github.io/post-images/1681668230963.png)\n\n在 `Localizable.strings` 中添加你的多语言文本，它看起来就像这样。\n\n```swift\n// 示例文本\nExampleMessage = \"Example Message\";\n```\n## 🪴 使用文本\n\n接下来，你可以像这样使用它：\n```swift\n/// - NSlocalizedString\nNSlocalizedString(\"ExampleMessage\", comment: \"\")\n // Example Message\n\n /// - R.swift\n R.string.localizable.exampleMessage()\n  // Example Message\n```\n---\n\n## 👨‍💻 启用国际化\n\n选中项目 `Project Info`，在 `Localizations` 中点击加号，添加你想要支持的语言。\n\n![](https://seaony.github.io/post-images/1681668335176.png)\n\n---\n\n## 📚 App 名称国际化\n\n创建 `InfoPlist.strings` 文件，点击右侧 `localize`，然后选择对应的语言。\n\n接着在文件中设置对应语言的 App 名称:\n\n```swift\nCFBundleName=\"Your App Name\"\n```",
+      "data": {
+        "title": "🎃 iOS Swift 项目实现多语言支持",
+        "date": "2023-04-16 19:11:43",
+        "tags": [
+          "Swift",
+          "iOS"
+        ],
+        "published": true,
+        "hideInList": false,
+        "feature": "/post-images/ios-swift-xiang-mu-shi-xian-duo-yu-yan-zhi-chi.png",
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "ios-swift-xiang-mu-shi-xian-duo-yu-yan-zhi-chi"
+    },
+    {
+      "content": "\n> \"The development of full artificial intelligence could spell the end of the human race.\"   - Stephen Hawking\n\n---\n\n因为 ChatGPT 的原因，最近各种 AI 概念真的很火 XD。\n\n自己手头也正好有一台主机闲置，正好自建一个 StableDiffusion 来玩。\n\n这篇文章可能会持续更新 (如果我有时间)，我会在这篇文章中分享整个过程。\n\n---\n\n## 💭 部署背景\n\n因为平时会玩游戏，所以主机环境为 Windows10。\n\n加上硬盘也不大，懒得去搞 Ubuntu 双系统了。所以目前的想法是直接部署一套 WebUI，\n\n开放给同局域网下的 Mac 使用。这样主机就可以开着不管，所有操作都使用 Mac 完成。\n\n跑完后再去 Windows 下提取跑出来的图片。\n\n> 顺带一提，Windows 和 Mac 文件互通确实是件很头疼的事情...\n\n---\n\n## 🪴 主机配置\n\n- CPU: **Intel 12700KF**\n\n- 内存: **32G 双通道 DDR4**\n\n- 显卡：**RTX 3080 10G DDR6X**\n\n- ... (更多的就懒得写了，和 SD 基本也没太多关系)\n\n> 如果显卡显存低于 4G 可能会比较吃力 🫠，建议使用 [Google Colab](https://colab.research.google.com/) 这类云服务来跑渲染。\n\n---\n\n## 🍻 部署 StableDiffusion\n\n因为我真的很讨厌 Windows 下的编程环境，一点都不想在 Windows 下折腾。\n\n所以我直接用了比较成熟的 WebUI： [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)。\n\n当然，如果喜欢折腾的话也可以自己去 Clone [源码](https://github.com/Stability-AI/stablediffusion)编译用 Shell 跑。\n\n整个安装过程还是比较简单的，跟着 README 走即可。\n\n1. 安装 Python 和 Git. (Python 要记得加 Path)。\n\n2. Clone WebUI 到本地 `git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git`\n\n3. 打开 Clone 下来的项目文件夹，双击 `webui-user.bat` 启动。\n\n第一次运行需要安装对应的依赖和库，一般需要等 20 ~ 30 分钟。同时，你需要科学上网。\n\n等待安装完成启动后，访问 `127.0.0.1.7860` 即可使用。\n\n---\n\n## 🍓 常见问题\n\n遇到问题可以先查阅官方提供的 [Wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Troubleshooting)。\n\n### 1. 主机服务开放局域网访问\n\n为了使局域网内的电脑可以访问本机服务，你可以做以下设置:\n\n1. **关闭 Windows 防火墙**\n   \n   在 `设置` - `Windows 安全中心` - `防火墙和网络保护` 中关闭你的防火墙。\n    \n    > 当然，这种方法其实是有一定风险的，你也可以使用 [添加入站规则](https://www.jianshu.com/p/642be9f0a597)的方式\n\n\n2. **修改 StableDiffusionWebUI 启动参数**\n   \n   使用文本编辑工具打开 WebUI 目录下的 `webui-user.bat`，添加如下参数：\n   \n   ```\n   set COMMANDLINE_ARGS=--listen --share --no-gradio-queue --enable-insecure-extension-access\n   ```\n   \n   > 前两个参数是为了局域网可以正常访问服务，后两个参数解决非本机无法安装拓展的问题。\n\n\n\n### 2. WebUI 用户界面的汉化\n\n虽然全是名词，但是汉化成中文还是用起来会方便一些。\n\n直接安装这个 Extension 即可完成汉化：[VinsonLaro/stable-diffusion-webui-chinese](https://github.com/VinsonLaro/stable-diffusion-webui-chinese)\n\n> 顺带一提，使用 Chinese-English 会更好一些，有些名词翻译后还是比较迷惑的。\n\n\n\n\n\n\n",
+      "data": {
+        "title": "🧶 自建 StableDiffusion 流程分享",
+        "date": "2023-04-15 12:34:04",
+        "tags": [
+          "StableDiffusion",
+          "AI"
+        ],
+        "published": true,
+        "hideInList": false,
+        "feature": "/post-images/zi-jian-stablediffusion-liu-cheng-fen-xiang.png",
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "zi-jian-stablediffusion-liu-cheng-fen-xiang"
+    },
+    {
       "content": "\n> 本文章所实现内容仅做学习分享所用，本人不承担任何责任，请勿将相关信息用于非法用途。\n\n# 🫠 准备工作\n\n首先，安装 [GuzzleHttp](https://github.com/guzzle/guzzle) 网络请求 Package。\n\n```shell\ncomposer require guzzlehttp/guzzle\n```\n\n---\n\n# 💭 绕过 Cloudflare\n\nValorant Api 受到 Cloudflare 防护，以及 Riot 也加了一层验证。\n\n绕过 Cloudflare 的核心原理是使用 `Ciphers` 伪造 SSL，具体请求方式如下：\n\n```php\n /**\n* 用于绕过 Riot 防护的请求头\n*\n* @var string[] 请求头\n*/\n$headers = [\n    'Content-Type'          => 'application/json',\n    'User-Agent'            => 'RiotClient/63.0.5.4887690.4789131 rso-auth (Windows; 10;;Professional, x64)',\n    'X-Riot-ClientPlatform' => 'ew0KCSJwbGF0Zm9ybVR5cGUiOiAiUEMiLA0KCSJwbGF0Zm9ybU9TIjogIldpbmRvd3MiLA0KCSJwbGF0Zm9ybU9TVmVyc2lvbiI6ICIxMC4wLjE5MDQyLjEuMjU2LjY0Yml0IiwNCgkicGxhdGZvcm1DaGlwc2V0IjogIlVua25vd24iDQp9',\n];\n\n/**\n* 请求中绕过 Cloudflare 所需要的 SSL 证书加密方式\n*\n* @var string[] 用于请求的参数\n*/\n$ciphers13 = [\n    'TLS_CHACHA20_POLY1305_SHA256',\n    'TLS_AES_128_GCM_SHA256',\n    'TLS_AES_256_GCM_SHA384',\n];\n\n/**\n* 请求中绕过 Cloudflare 所需要的 SSL 证书加密方式\n*\n* @var string[] 用于请求的参数\n*/\n$ciphers = [\n    'ECDHE-ECDSA-CHACHA20-POLY1305',\n    'ECDHE-RSA-CHACHA20-POLY1305',\n    'ECDHE-ECDSA-AES128-GCM-SHA256',\n    'ECDHE-RSA-AES128-GCM-SHA256',\n    'ECDHE-ECDSA-AES256-GCM-SHA384',\n    'ECDHE-RSA-AES256-GCM-SHA384',\n    'ECDHE-ECDSA-AES128-SHA',\n    'ECDHE-RSA-AES128-SHA',\n    'ECDHE-ECDSA-AES256-SHA',\n    'ECDHE-RSA-AES256-SHA',\n    'AES128-GCM-SHA256',\n    'AES256-GCM-SHA384',\n    'AES128-SHA',\n    'AES256-SHA',\n    'DES-CBC3-SHA',  # most likely not available\n];\n\n// 实例化 HttpClient\n $client = new \\GuzzleHttp\\Client([\n    'cookies' => true, // 开启 Cookie，保存 Riot 返回的 Token\n    'curl'    => [\n        CURLOPT_SSLVERSION      => CURL_SSLVERSION_TLSv1_3,\n        CURLOPT_SSL_CIPHER_LIST => implode(':', $ciphers),\n        CURLOPT_TLS13_CIPHERS   => implode(':', $ciphers13),\n    ],\n]);\n\n// 发送请求\n$response = $client->request('POST', 'https://auth.riotgames.com/api/v1/authorization', [\n    'json' => [\n        'client_id'             => 'riot-client',\n        'code_challenge'        => '',\n        'code_challenge_method' => '',\n        'acr_values'            => '',\n        'claims'                => '',\n        'nonce'                 => '69420',\n        'redirect_uri'          => 'http://localhost/redirect',\n        'response_type'         => 'token id_token',\n        'scope'                 => 'openid link ban lol_region',\n    ],\n]);\n\n// do something\n```\n\n---\n\n# 👨‍💻 Reference Links\n\n- [techchrism/valorant-api-docs](https://github.com/techchrism/valorant-api-docs)\n",
       "data": {
         "title": "🪴 绕过 Cloudflare 访问 Valorant Api",
@@ -77,6 +115,16 @@
     }
   ],
   "tags": [
+    {
+      "name": "StableDiffusion",
+      "slug": "LgPKkP_zG",
+      "used": true
+    },
+    {
+      "name": "AI",
+      "slug": "tULiQstXBj",
+      "used": true
+    },
     {
       "name": "SSL",
       "slug": "jThqpHLAD",
