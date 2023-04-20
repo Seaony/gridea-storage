@@ -60,12 +60,43 @@ with ease. 🧐)
 
 ---
 
-## 🫠 Contact
+## 🧶 如果你也喜欢玩游戏
 
-> Tips：I don't like idiots，Please be careful 🤧
+- [《英雄联盟》](https://lol.qq.com/main.shtml)
+  
+    玩的时间最久的游戏。可能对于我们这代人来说，联盟就像是陪着我们长大的一样。直到现在，虽然已经没有再想去玩的欲望了，但是依旧记得它所承载的青春和回忆。
 
-- WeChat (Base64)：`Y2FsaWJ1b3Jz`
+- [《死亡搁浅：导演剪辑版》](https://www.playstation.com/en-hk/games/death-stranding/)
+  
+    买了 PS 后白金的的第一个游戏。整个游戏过程像是做了一个很长的梦，直至醒来。可能，再难看到第二个带有如此强烈个人情感色彩的作品了。
 
-- Email (Base64)：`c2Vhb255QG91dGxvb2suY29t`
+- [《Valorant》](https://playvalorant.com/) (ING)
+
+    极致的爆头艺术，Riot 的作品还是很棒的。
+
+---
+
+## 🍯 我正在
+
+- **学习日语**
+    
+    虽然看了很多番，但是对于日语还是一知半解。今年的目标是考下 N4，加油~
+
+- **开发 《Valor》**
+  
+    Valor 是一个基于 Valorant 内部 API 的游戏助手，目前正在开发 iOS 版本。
+
+- **减脂增肌**
+
+    大概是死宅的每日循环，躺平几个月之后就得来一次，今年的目标是减到 120。
+
+---
+
+## 🫠 和我聊聊
+
+
+- **Wechat (Base64)**：Y2FsaWJ1b3Jz
+
+- **Email (Base64)**：`c2Vhb255QG91dGxvb2suY29t`
 
 

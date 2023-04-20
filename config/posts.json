@@ -1,6 +1,24 @@
 {
   "posts": [
     {
+      "content": "\n## 🫠 什么是声调\n\n日语词语中的各个音节之间存在的高低、轻重的配置关系叫做**声调**（アクセント），声调可以用来**区分同音词**。与中文的四声声调不同，日语是**高低型声调**，发音是“由低到高”“由高到低”的状态，单词中某些音节为高音，某些音节为低音。\n\n---\n\n## 🧶 声调规则\n\n1. <u>**第一个音与第二音不是同音**</u>\n\n2. <u>**出现降音就不会升回去**</u>\n\n3. <u>**在第几个音出现，就是几型**</u>\n\n---\n\n## 🪴 声调类型\n\n日语的声调可以分为平板型和起伏型，起伏型又分为头高型、中高型、尾高型。\n\n1. **平板型**\n   \n    第一个音节低，后面音都高。后续助词为高音，这种类型中由三至四个音节组成的词较多。\n\n2. <u>**头高型**</u>\n   \n    第一个音节高，后面音都低。\n\n3. <u>**中高型**</u>\n    \n    第一个和最后一个音节低，中间为高音（分全为高音节和部分为高音节）。后续助词为低音这种类型中没有一个或两个音节的词，三个音节以上才会出现。\n\n4. <u>**尾高型**</u>\n\n    第一个音节低，第二个音开始都为高音节。后续助词为低音。\n\n\n> 在日语中一个假名代表一拍，包括表示清音、浊音、半浊音、促音っ、拨音ん以及长音的假名，但是不包括组成拗音中的小“ゃ”、“ゅ”和“ょ”，即一个拗音整体上作为一个音拍来看待，如“きゃ”是一个音拍，而不是两拍。而“きょう”和“そう”等长音则是两拍。\n\n\n\n",
+      "data": {
+        "title": "🚍 日语声调 - [日语学习笔记]",
+        "date": "2023-04-20 22:17:56",
+        "tags": [
+          "日本語"
+        ],
+        "published": true,
+        "hideInList": false,
+        "feature": "/post-images/ri-yu-sheng-diao-ri-yu-xue-xi-bi-ji.png",
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "ri-yu-sheng-diao-ri-yu-xue-xi-bi-ji"
+    },
+    {
       "content": "\n## 😶‍🌫️ 创建文件\n\n在项目根目录下右键选择 `New File`，创建一个名为 `Localizable.strings` 的 Strings File。\n\n![](https://seaony.github.io/post-images/1681668230963.png)\n\n在 `Localizable.strings` 中添加你的多语言文本，它看起来就像这样。\n\n```swift\n// 示例文本\nExampleMessage = \"Example Message\";\n```\n## 🪴 使用文本\n\n接下来，你可以像这样使用它：\n```swift\n/// - NSlocalizedString\nNSlocalizedString(\"ExampleMessage\", comment: \"\")\n // Example Message\n\n /// - R.swift\n R.string.localizable.exampleMessage()\n  // Example Message\n```\n---\n\n## 👨‍💻 启用国际化\n\n选中项目 `Project Info`，在 `Localizations` 中点击加号，添加你想要支持的语言。\n\n![](https://seaony.github.io/post-images/1681668335176.png)\n\n---\n\n## 📚 App 名称国际化\n\n创建 `InfoPlist.strings` 文件，点击右侧 `localize`，然后选择对应的语言。\n\n接着在文件中设置对应语言的 App 名称:\n\n```swift\nCFBundleName=\"Your App Name\"\n```",
       "data": {
         "title": "🎃 iOS Swift 项目实现多语言支持",
@@ -98,7 +116,7 @@
       "fileName": "hello-gridea"
     },
     {
-      "content": "\n<!-- more -->\n\n> We used to look up at the sky and wonder at our place in the stars, now we just look down and worry about our place in the dirt. <div style=\"text-align: right;\">- 《Interstellar》</div>\n\n<!-- more -->\n\n\n\n## 🏠 Who am I?\n\n\n---\n\n## ⚒️ Digital Nomad\n\n> 如果有一天，我们终将会被淘汰，那么我希望淘汰我的是自己。或者说，以另一种方式存在的另一个 “我” 🫠。可能这一天很遥远，也可能，它就在明天。\n\n#### 👨‍💻 Development:\n\n- [JetBrains](https://www.jetbrains.com/) (The best IDE in the world 😻)\n\n- [Hyper](https://hyper.is/) (A terminal built on web technologies. 🫠)\n\n- [TablePlus](https://tableplus.com/) (Database management made easy 🍭)\n\n- [PHP Monitor](https://phpmon.app/) (Monitor and manage your PHP installations\nwith ease. 🧐)\n\n#### ⏳ Save Time:\n\n- [Raycast](https://www.raycast.com/) (Supercharged productivity 🌈)\n\n- [Things3](https://culturedcode.com/things/) (Simply Powerful，and Beautiful 🌱)\n\n- [1Password](https://1password.com/zh-cn) (The world’s most-loved password manager 👻)\n\n#### 🍯 Other Tools\n\n- [ClashX](https://github.com/yichengchen/clashX) (Over this wall 🍂)\n\n- [IINA](https://cleanshot.com/)  (We always have something to watch.)\n\n- [CleanShotX](https://cleanshot.com/)  (Capture your Mac’s screen like a pro. 😲)\n\n\n\n#### 💭 I'm Alive\n\n- [RunCat](https://kyome.io/runcat/index.html?lang=en) (Cat living in the menubar. 🐈)\n\n---\n\n## 🫠 Contact\n\n> Tips：I don't like idiots，Please be careful 🤧\n\n- WeChat (Base64)：`Y2FsaWJ1b3Jz`\n\n- Email (Base64)：`c2Vhb255QG91dGxvb2suY29t`\n\n\n",
+      "content": "\n<!-- more -->\n\n> We used to look up at the sky and wonder at our place in the stars, now we just look down and worry about our place in the dirt. <div style=\"text-align: right;\">- 《Interstellar》</div>\n\n<!-- more -->\n\n\n\n## 🏠 Who am I?\n\n\n---\n\n## ⚒️ Digital Nomad\n\n> 如果有一天，我们终将会被淘汰，那么我希望淘汰我的是自己。或者说，以另一种方式存在的另一个 “我” 🫠。可能这一天很遥远，也可能，它就在明天。\n\n#### 👨‍💻 Development:\n\n- [JetBrains](https://www.jetbrains.com/) (The best IDE in the world 😻)\n\n- [Hyper](https://hyper.is/) (A terminal built on web technologies. 🫠)\n\n- [TablePlus](https://tableplus.com/) (Database management made easy 🍭)\n\n- [PHP Monitor](https://phpmon.app/) (Monitor and manage your PHP installations\nwith ease. 🧐)\n\n#### ⏳ Save Time:\n\n- [Raycast](https://www.raycast.com/) (Supercharged productivity 🌈)\n\n- [Things3](https://culturedcode.com/things/) (Simply Powerful，and Beautiful 🌱)\n\n- [1Password](https://1password.com/zh-cn) (The world’s most-loved password manager 👻)\n\n#### 🍯 Other Tools\n\n- [ClashX](https://github.com/yichengchen/clashX) (Over this wall 🍂)\n\n- [IINA](https://cleanshot.com/)  (We always have something to watch.)\n\n- [CleanShotX](https://cleanshot.com/)  (Capture your Mac’s screen like a pro. 😲)\n\n\n\n#### 💭 I'm Alive\n\n- [RunCat](https://kyome.io/runcat/index.html?lang=en) (Cat living in the menubar. 🐈)\n\n---\n\n## 🧶 如果你也喜欢玩游戏\n\n- [《英雄联盟》](https://lol.qq.com/main.shtml)\n  \n    玩的时间最久的游戏。可能对于我们这代人来说，联盟就像是陪着我们长大的一样。直到现在，虽然已经没有再想去玩的欲望了，但是依旧记得它所承载的青春和回忆。\n\n- [《死亡搁浅：导演剪辑版》](https://www.playstation.com/en-hk/games/death-stranding/)\n  \n    买了 PS 后白金的的第一个游戏。整个游戏过程像是做了一个很长的梦，直至醒来。可能，再难看到第二个带有如此强烈个人情感色彩的作品了。\n\n- [《Valorant》](https://playvalorant.com/) (ING)\n\n    极致的爆头艺术，Riot 的作品还是很棒的。\n\n---\n\n## 🍯 我正在\n\n- **学习日语**\n    \n    虽然看了很多番，但是对于日语还是一知半解。今年的目标是考下 N4，加油~\n\n- **开发 《Valor》**\n  \n    Valor 是一个基于 Valorant 内部 API 的游戏助手，目前正在开发 iOS 版本。\n\n- **减脂增肌**\n\n    大概是死宅的每日循环，躺平几个月之后就得来一次，今年的目标是减到 120。\n\n---\n\n## 🫠 和我聊聊\n\n\n- **Wechat (Base64)**：Y2FsaWJ1b3Jz\n\n- **Email (Base64)**：`c2Vhb255QG91dGxvb2suY29t`\n\n\n",
       "data": {
         "title": "💭 Code in Life, Think in Death。",
         "date": "2019-01-25 19:09:48",
@@ -115,6 +133,11 @@
     }
   ],
   "tags": [
+    {
+      "name": "日本語",
+      "slug": "McZW1oVKS",
+      "used": true
+    },
     {
       "name": "StableDiffusion",
       "slug": "LgPKkP_zG",
